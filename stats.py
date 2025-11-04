@@ -17,8 +17,10 @@ def get_chars_dict(text):
 def get_num(entry):
     return entry["num"]
 
-def sorted_list(letters):
-    char_list = [{'char': char, 'num': num} for char, num in letters.items()]
-    char_list.sort(reverse=True, key=get_num)
-    return char_list
+def chars_dict_to_sorted_list(num_chars_dict):
+    sorted_list = []
+    for ch in num_chars_dict:
+        sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
+    sorted_list.sort(reverse=True, key=get_num)
+    return sorted_list
 
